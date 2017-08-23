@@ -17,6 +17,7 @@
 
 
 <ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-card *ngFor="let c of course" (click)="itemSelected(c.id)">
     <ion-card-content>
       <ion-card-title >{{c.c_title}}</ion-card-title>
