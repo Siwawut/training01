@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Sign up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form novalidate #myForm="ngForm" (ngSubmit)="signup(myForm.value)">    
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Full name *</ion-label>
+        <ion-input type="text" name="fullname" required ngModel></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Email *</ion-label>
+        <ion-input type="email" name="email" required ngModel pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Password *</ion-label>
+        <ion-input type="password" name="password" required minlength="3" ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button full type="submit" [disabled]="!myForm.form.valid">Sign In</button>
+      </ion-item>
+    </ion-list>
+  </form>
+
+</ion-content>

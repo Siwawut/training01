@@ -1,10 +1,15 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><ion-icon name="home"></ion-icon> Home </ion-title>
-  </ion-navbar>
+    <ion-title><ion-icon name="home"></ion-icon> Home</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="openSignup()">
+            <ion-icon name="person-add"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
@@ -16,9 +21,9 @@
     <li *ngFor="let Hero of Heros;let i=index" color="secondary">{{i+1}} > {{Hero}}</li>
   </ul>
   <button ion-button secondary menuToggle>Toggle Menu</button><br>
-  
+
   <ul>
-    <li *ngFor="let product of Products;let i=index" color="secondary">{{i+1}}  Name : {{product.name}} Price : {{product.price}}</li>
+    <li *ngFor="let product of Products;let i=index" color="secondary">{{i+1}} Name : {{product.name}} Price : {{product.price}}</li>
   </ul>
   <ion-badge item-end>260k</ion-badge>
 

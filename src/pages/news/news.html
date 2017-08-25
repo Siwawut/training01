@@ -1,0 +1,41 @@
+<ion-header >
+
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>News</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+
+  <ion-card *ngFor="let l of listnews" (click)='openExternal(l.url)' >
+    <img src="{{l.urlToImage}}" />
+    <ion-card-content>
+      <ion-card-title>
+        {{l.title}}
+      </ion-card-title>
+      <p>
+        {{l.description}}
+      </p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col icon-left>
+        <ion-note>
+          <div>{{l.publishedAt | date:'medium'}} by {{l.author}}</div>
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+
+</ion-content>

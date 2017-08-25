@@ -1,0 +1,23 @@
+<!--
+  Generated template for the CourseDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{c_title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h3>{{c_detail}}</h3>
+  <ion-item *ngFor="let i of item">
+    <ion-icon item-start></ion-icon>
+    {{i.ch_title}}
+    <ion-badge item-end ><ion-icon name='ios-eye-outline'></ion-icon> {{i.ch_view}}</ion-badge>
+  </ion-item>
+</ion-content>
